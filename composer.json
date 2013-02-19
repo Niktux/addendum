@@ -1,0 +1,22 @@
+{
+    "name": "niktux/addendum",
+    "type": "library",
+    "description": "Annotations support for PHP (fork of addendum)",
+    "authors": [
+        {
+            "name": "Nicolas Le Nardou",
+            "email": "nico.ln@gmail.com"
+        },
+        {
+            "name": "Johno Suchal",
+            "email": "jan.suchal@gmail.com"
+        }
+    ],
+    "autoload":
+    {
+        "psr-0":
+        {
+            "Addendum": "lib/"
+        }
+    }
+}
