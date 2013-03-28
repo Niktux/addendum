@@ -2,6 +2,7 @@
     "name": "niktux/addendum",
     "type": "library",
     "description": "Annotations support for PHP (fork of addendum)",
+    "keywords": ["annotations", "metadata", "docblock", "parser"],
     "authors": [
         {
             "name": "Nicolas Le Nardou",
