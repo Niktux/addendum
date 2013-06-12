@@ -21,6 +21,10 @@ class Addendum
         return $reflection->getDocComment();
     }
 
+    public static function register($name, $className){
+        self::$classnames[$name] = $className;
+    }
+
     /** Raw mode test */
     private static function checkRawDocCommentParsingNeeded()
     {
