@@ -21,6 +21,10 @@ class Addendum
         return $reflection->getDocComment();
     }
 
+    public static function register($name, $className){
+        self::$classnames[$name] = $className;
+    }
+
     /** Raw mode test */
     private static function checkRawDocCommentParsingNeeded()
     {
@@ -79,6 +83,11 @@ class Addendum
             else
             {
                 $pos = strrpos($declared, "_$class");
+
+                # Check if we have PHP Namespace match
+                if($pos === false)
+                    $pos = strrpos($declared, "\\$class");
+
                 
                 if($pos !== false && ($pos + strlen($class) == strlen($declared) - 1))
                 {
