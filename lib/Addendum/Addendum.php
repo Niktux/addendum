@@ -21,7 +21,8 @@ class Addendum
         return $reflection->getDocComment();
     }
 
-    public static function register($name, $className){
+    public static function register($name, $className)
+    {
         self::$classnames[$name] = $className;
     }
 
@@ -86,7 +87,9 @@ class Addendum
 
                 # Check if we have PHP Namespace match
                 if($pos === false)
+                {
                     $pos = strrpos($declared, "\\$class");
+                }
 
                 
                 if($pos !== false && ($pos + strlen($class) == strlen($declared) - 1))
