@@ -134,5 +134,4 @@ class Addendum
         
         return self::$annotations;
     }
-
 }
