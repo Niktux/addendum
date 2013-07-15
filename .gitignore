@@ -3,3 +3,6 @@
 .project
 .buildpath
 .externalToolBuilders
+
+# Dependencies
+vendor
