@@ -2,7 +2,7 @@
 
 namespace Tests\Addendum;
 
-require_once __DIR__ . '/AnnotationTestData.php';
+require_once __DIR__ . '/Fixtures/AnnotationTestData.php';
 
 class AnnotationTest extends \PHPUnit_Framework_TestCase
 {

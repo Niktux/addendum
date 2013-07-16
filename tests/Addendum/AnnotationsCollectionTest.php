@@ -4,7 +4,7 @@ namespace Tests\Addendum;
 
 use Addendum\AnnotationsCollection;
 
-require_once __DIR__ . '/AnnotationTestData.php';
+require_once __DIR__ . '/Fixtures/AnnotationTestData.php';
 
 class TestOfAnnotationCollection extends \PHPUnit_Framework_TestCase
 {

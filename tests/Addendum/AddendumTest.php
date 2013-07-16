@@ -4,7 +4,7 @@ namespace Tests\Addendum;
 
 use Addendum\Addendum;
 
-require_once __DIR__ . '/AddendumTestData.php';
+require_once __DIR__ . '/Fixtures/AddendumTestData.php';
 
 class AddendumTest extends \PHPUnit_Framework_TestCase
 {
