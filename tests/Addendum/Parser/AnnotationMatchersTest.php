@@ -37,20 +37,22 @@ class AnnotationMatchersTest extends \PHPUnit_Framework_TestCase
         $this->assertMatcherResult($matcher, 'johno@example.com', array());
     }
 
-    // FIXME
-//     public function testAnnotationsMatcherShouldMatchWhenThereIsNoSpaceBetweenDocBlockMarginAndAt()
-//     {
-//         $matcher = new AnnotationsMatcher();
+    /**
+     * @group failedTests
+     */
+    public function testAnnotationsMatcherShouldMatchWhenThereIsNoSpaceBetweenDocBlockMarginAndAt()
+    {
+        $matcher = new AnnotationsMatcher();
         
-//         $block = "/**\n *@Annotation(true)\n*/";
+        $block = "/**\n *@Annotation(true)\n*/";
         
-//         $expected = array(
-//             'Annotation'=>array(
-//                 array('value' => true)
-//         ));
+        $expected = array(
+            'Annotation'=>array(
+                array('value' => true)
+        ));
         
-//         $this->assertMatcherResult($matcher, $block, $expected);
-//    }
+        $this->assertMatcherResult($matcher, $block, $expected);
+   }
 
     public function testAnnotationsMatcherShouldMatchWhenFirstThingOnALine()
     {
