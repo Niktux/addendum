@@ -22,9 +22,6 @@ class AnnotationsMatcherTest extends AnnotationMatcherTestCase
         $this->assertMatcherResult($matcher, 'johno@example.com', array());
     }
     
-    /**
-     * @group failedTests
-     */
     public function testAnnotationsMatcherShouldMatchWhenThereIsNoSpaceBetweenDocBlockMarginAndAt()
     {
         $matcher = new AnnotationsMatcher();
