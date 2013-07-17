@@ -7,7 +7,7 @@ class AnnotationsMatcher
     public function matches($string, &$annotations)
     {
         $annotations = array();
-        $annotation_matcher = new AnnotationMatcher;
+        $annotationMatcher = new AnnotationMatcher();
         
         while(true)
         {
@@ -27,7 +27,7 @@ class AnnotationsMatcher
                 break; // no more annotations
             }
             
-            if(($length = $annotation_matcher->matches($string, $data)) !== false)
+            if(($length = $annotationMatcher->matches($string, $data)) !== false)
             {
                 $string = substr($string, $length);
                 list($name, $params) = $data;
