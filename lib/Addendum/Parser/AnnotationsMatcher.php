@@ -24,12 +24,14 @@ class AnnotationsMatcher
             }
             else
             {
-                break; // no more annotations
+                // no more annotations
+                break;
             }
             
             if(($length = $annotationMatcher->matches($string, $data)) !== false)
             {
                 $string = substr($string, $length);
+                
                 list($name, $params) = $data;
                 $annotations[$name][] = $params;
             }
