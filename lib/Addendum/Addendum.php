@@ -41,11 +41,6 @@ class Addendum
 
     public static function setRawMode($enabled = true)
     {
-        if($enabled)
-        {
-            // require_once(dirname(__FILE__) . '/annotations/doc_comment.php');
-        }
-        
         self::$rawMode = $enabled;
     }
 

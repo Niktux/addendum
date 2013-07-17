@@ -17,7 +17,6 @@ class Annotation
         if(isset(self::$creationStack[$class]))
         {
             trigger_error("Circular annotation reference on '$class'", E_USER_ERROR);
-            return;
         }
         
         self::$creationStack[$class] = true;

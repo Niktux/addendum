@@ -16,8 +16,6 @@ class AnnotationStaticConstantMatcher extends RegexMatcher
         if(!defined($name))
         {
             trigger_error("Constant '$name' used in annotation was not defined.");
-            
-            return false;
         }
         
         return constant($name);

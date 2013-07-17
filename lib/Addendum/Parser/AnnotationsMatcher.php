@@ -18,7 +18,7 @@ class AnnotationsMatcher
             }
             else
             {
-                return; // no more annotations
+                break; // no more annotations
             }
             
             if(($length = $annotation_matcher->matches($string, $data)) !== false)
