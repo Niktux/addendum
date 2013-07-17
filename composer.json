@@ -21,7 +21,8 @@
     {
         "psr-0":
         {
-            "Addendum": "lib/"
+            "Addendum": "lib/",
+            "Tests\\Addendum": ""
         }
     }
 }
