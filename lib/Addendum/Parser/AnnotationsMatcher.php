@@ -11,7 +11,7 @@ class AnnotationsMatcher
         
         while(true)
         {
-            if(preg_match('~(?<leadingSpace>\s)?(?=@)~', $string, $matches, PREG_OFFSET_CAPTURE))
+            if(preg_match('~(?P<leadingSpace>\s)?(?=@)~', $string, $matches, PREG_OFFSET_CAPTURE))
             {
                 $offset = $matches[0][1];
                 
