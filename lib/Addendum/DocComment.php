@@ -90,6 +90,7 @@ class DocComment
                         break;
                     
                     case T_CLASS:
+                    case T_INTERFACE:
                         $class = $this->getString($tokens, $i, $max);
                         if($comment !== false)
                         {

@@ -21,9 +21,6 @@ class DocCommentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($finder->get($reflection), '/** class doccomment */');
     }
     
-    /**
-     * @group failedTests
-     */
     public function testFinderFindsInterfaceDocBlock()
     {
         $reflection = new ReflectionClass('SomeInterface');
@@ -31,9 +28,6 @@ class DocCommentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('/** interface doccomment */', $finder->get($reflection));
     }
     
-    /**
-     * @group failedTests
-     */
     public function testFinderFindsInterfaceMethodDocBlock()
     {
         $reflection = new ReflectionClass('SomeInterface');
