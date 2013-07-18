@@ -12,6 +12,7 @@ class ConstrainedAnnotationTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @expectedException PHPUnit_Framework_Error
+     * @group failedTests
      */
     public function testClassAnnotationThrowsErrorWhenOnMethod()
     {
@@ -22,6 +23,7 @@ class ConstrainedAnnotationTest extends \PHPUnit_Framework_TestCase
     
     /**
      * @expectedException PHPUnit_Framework_Error
+     * @group failedTests
      */
     public function testClassAnnotationThrowsErrorWhenOnProperty()
     {
@@ -30,9 +32,6 @@ class ConstrainedAnnotationTest extends \PHPUnit_Framework_TestCase
         $method = $reflection->getProperty('property');
     }
 
-    /**
-     * @group failedTests
-     */
     public function testSingleTargetAnnotationThrowsNoErrorWhenOnRightPlace()
     {
         $reflection = new ReflectionAnnotatedClass('SuccesfullyAnnotatedClass');
@@ -43,6 +42,7 @@ class ConstrainedAnnotationTest extends \PHPUnit_Framework_TestCase
     
     /**
      * @expectedException PHPUnit_Framework_Error
+     * @group failedTests
      */
     public function testMultiTargetAnnotationThrowsErrorWhenOnWrongPlace()
     {
@@ -51,18 +51,15 @@ class ConstrainedAnnotationTest extends \PHPUnit_Framework_TestCase
         $method = $reflection->getMethod('method2');
     }
 
-    /**
-     * @group failedTests
-     */
     public function testMultiTargetAnnotationThrowsNoErrorWhenOnRightPlace()
     {
         $reflection = new ReflectionAnnotatedClass('SuccesfullyAnnotatedClass');
         $method = $reflection->getProperty('property2');
     }
-
     
     /**
      * @expectedException PHPUnit_Framework_Error
+     * @group failedTests
      */
     public function testBadlyNestedAnnotationThrowsError()
     {
@@ -71,9 +68,6 @@ class ConstrainedAnnotationTest extends \PHPUnit_Framework_TestCase
         $reflection = new ReflectionAnnotatedClass('ClassWithBadlyNestedAnnotations');
     }
 
-    /**
-     * @group failedTests
-     */
     public function testSuccesfullyNestedAnnotationThrowsNoError()
     {
         $reflection = new ReflectionAnnotatedClass('SuccesfullyAnnotatedClass');

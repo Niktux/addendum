@@ -31,7 +31,10 @@ class AnnotationsBuilder
         $class = Addendum::resolveClassName($class);
         
         // FIXME
-        if(is_subclass_of($class, 'Addendum\Annotation') && !Addendum::ignores($class) || $class == 'Addendum\Annotation')
+        if(class_exists($class)
+        && is_subclass_of($class, 'Addendum\Annotation')
+        && !Addendum::ignores($class)
+        || $class === 'Addendum\Annotation')
         {
             $annotationReflection = new \ReflectionClass($class);
             
