@@ -71,8 +71,6 @@ class DocComment
     protected function parse($file)
     {
         $tokens = $this->getTokens($file);
-        $currentClass = false;
-        $currentBlock = false;
         $max = count($tokens);
         $i = 0;
         
