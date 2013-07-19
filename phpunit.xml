@@ -11,6 +11,13 @@
          syntaxCheck="false"
          bootstrap="Tests/bootstrap.php"
 >
+
+<groups>
+  <exclude>
+    <group>failedTests</group>
+  </exclude>
+</groups>
+
 <filter>
   <blacklist>
     <directory suffix=".php">vendor</directory>

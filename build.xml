@@ -107,8 +107,6 @@
    <arg path="${basedir}/build/logs/clover.xml" />
    <arg value="--log-junit" />
    <arg path="${basedir}/build/logs/junit.xml" />
-   <arg value="--exclude-group" />
-   <arg path="failedTests" />
    <arg value="Tests" />
   </exec>
  </target>
