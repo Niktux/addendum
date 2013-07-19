@@ -17,7 +17,7 @@ class AnnotationsMatcher
                 
                 if(isset($matches['leadingSpace']))
                 {
-                    $offset += 1;
+                    $offset++;
                 }
                 
                 $string = substr($string, $offset);
