@@ -7,7 +7,8 @@ class Addendum
     private static $rawMode;
     private static $ignore;
     private static $classnames = array();
-    private static $annotations = false;
+    private static $annotations = array();
+    private static $initialized = false;
 
     public static function getDocComment($reflection)
     {
@@ -64,9 +65,18 @@ class Addendum
 
     public static function resolveClassName($class)
     {
+        $class = ltrim($class, '\\');
+        
         if(isset(self::$classnames[$class]))
         {
             return self::$classnames[$class];
+        }
+        
+        if(class_exists($class, true) && self::isAClassAnnotation($class))
+        {
+            self::register($class, $class);
+
+            return $class;
         }
         
         $matching = array();
@@ -114,19 +124,27 @@ class Addendum
 
     private static function getDeclaredAnnotations()
     {
-        if(!self::$annotations)
+        if(!self::$initialized)
         {
-            self::$annotations = array();
+            self::$initialized = true;
+            $annotations = array();
             
             foreach(get_declared_classes() as $class)
             {
-                if(is_subclass_of($class, 'Addendum\Annotation') || $class == 'Addendum\Annotation')
+                if(self::isAClassAnnotation($class))
                 {
-                    self::$annotations[] = $class;
+                    $annotations[] = $class;
                 }
             }
+            
+            self::$annotations = array_merge(self::$annotations, $annotations);
         }
         
         return self::$annotations;
+    }
+    
+    private static function isAClassAnnotation($class)
+    {
+        return is_subclass_of($class, 'Addendum\Annotation') || $class == 'Addendum\Annotation';
     }
 }
