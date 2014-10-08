@@ -12,6 +12,12 @@
          bootstrap="Tests/bootstrap.php"
 >
 
+<testsuites>
+  <testsuite name="Addendum Test Suite">
+    <directory>./Tests/</directory>
+  </testsuite>
+</testsuites>
+
 <groups>
   <exclude>
     <group>failedTests</group>
